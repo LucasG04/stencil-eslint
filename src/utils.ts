@@ -32,7 +32,7 @@ export function parseDecorator(decorator: any) {
 }
 
 export function decoratorName(dec: any): string {
-  return dec.expression && dec.expression.callee.name;
+  return dec.expression && dec.expression.callee && dec.expression.callee.name;
 }
 
 export function isDecoratorNamed(propName: string) {
