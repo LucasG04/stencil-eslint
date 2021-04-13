@@ -17,7 +17,7 @@ const rule = {
                     return;
                 }
                 const originalNode = parserServices.esTreeNodeToTSNodeMap.get(node);
-                const stencilDecorator = originalNode.decorators && originalNode.decorators.some((dec) => stencilDecorators.includes(dec.expression.expression.escapedText));
+                const stencilDecorator = originalNode.decorators && originalNode.decorators?.some((dec) => stencilDecorators.includes(dec.expression.expression?.escapedText));
                 const stencilCycle = stencilLifecycle.includes(originalNode.name.escapedText);
                 if (!stencilDecorator && !stencilCycle && !isPrivate(originalNode)) {
                     context.report({
